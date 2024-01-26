@@ -22,11 +22,16 @@ public class WidgetRepositoryImpl implements WidgetRepository {
     public List<Widget> getAll() {
         if (widgets.isEmpty()) return Collections.emptyList();
 
-        return widgets.values().stream().toList();
+        return widgets.values().stream().sorted().toList();
     }
 
       @Override
     public void add(Widget widget) {
         widgets.put(widget.getId(),widget);
+    }
+
+    @Override
+    public void deleteById(String id) {
+        widgets.remove(id);
     }
 }

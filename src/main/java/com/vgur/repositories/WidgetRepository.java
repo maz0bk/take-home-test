@@ -11,4 +11,5 @@ public interface WidgetRepository {
      void add(Widget widget);
 
 
+    void deleteById(String id);
 }

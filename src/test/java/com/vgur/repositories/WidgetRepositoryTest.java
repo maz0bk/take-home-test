@@ -5,10 +5,13 @@ import com.vgur.services.WidgetService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class WidgetRepositoryTest {
-    private static final Widget FIRSTWIDGET = new Widget(WidgetService.createId(), 1, 1, 1, 10, 10);
+    private static final Widget FIRSTWIDGET = Widget.builder()
+            .x(1).y(1).width(1).height(1).updatedAt(LocalDateTime.now()).build();
 
     @Test
     void getById() {

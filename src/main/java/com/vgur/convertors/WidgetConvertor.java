@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class WidgetConvertor {
     public WidgetDto entityToDto(Widget widget) {
-        return new WidgetDto(widget.getZIndex(), widget.getX(), widget.getY(), widget.getWidth(), widget.getHeight());
+        return new WidgetDto(widget.getId(), widget.getZIndex(), widget.getX(), widget.getY(), widget.getWidth(), widget.getHeight(), widget.getUpdatedAt());
     }
 }
